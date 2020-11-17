@@ -1,4 +1,4 @@
-from Forecasts import forecasts
+from Analytics.Forecasts import forecasts
 from flask import Flask
 
 app = Flask(__name__)
