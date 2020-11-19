@@ -138,7 +138,7 @@ class KPrototypes():
     return min_distance
 
 
-
+"""
 clf = KPrototypes(cat = [0, 1], plot_var= [3,4], k = 6)
 clf.fit(normalized_df)
 
@@ -154,3 +154,4 @@ for classification in clf.clasified_data:
         plt.scatter(featureset[clf.plot_var[0]], featureset[clf.plot_var[1]], color=color, s=80, linewidths=2)
 
 plt.show()
+"""

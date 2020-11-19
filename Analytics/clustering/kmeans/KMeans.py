@@ -115,7 +115,7 @@ class KMeans():
     return min_distance
 
 
-
+"""
 clf = KMeans(k = 6)
 clf.fit(normalized_df)
 
@@ -131,9 +131,7 @@ for classification in clf.clasified_data:
         plt.scatter(featureset[0], featureset[1], color=color, s=80, linewidths=2)
 
 plt.show()
-
-
-
+"""
 
 
 
