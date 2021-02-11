@@ -6,6 +6,7 @@ from flask import Flask
 app = Flask(__name__)
 
 app.add_url_rule('/', view_func=forecasts.HelloWorld)
+
 """
 app.add_url_rule('/', view_func=KMeans.)
 app.add_url_rule('/', view_func=KPrototypes.)

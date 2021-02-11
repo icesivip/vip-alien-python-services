@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from matplotlib import style
 style.use('ggplot')
 import numpy as np
-
+import random
 
 data1 = pd.read_fwf('Analytics/clustering/kmeans/datasets/a1.txt', header = None)
 #plt.scatter(data1[0].values, data1[1].values)
@@ -11,7 +11,6 @@ data1 = pd.read_fwf('Analytics/clustering/kmeans/datasets/a1.txt', header = None
 print(data1)
 
 normalized_df = ((data1-data1.mean())/data1.std()).to_numpy()
-
 
 
 class KMeans():
@@ -41,10 +40,11 @@ class KMeans():
   def fit(self, data):
     
     self.centroids = {}
+    self.data = data
 
     #Se definen como centroides los primeros k elementos del dataset
     for centroid in range(self.k):
-      self.centroids[centroid] = data[centroid] 
+      self.centroids[centroid] = random.choice(data)
 
   def step(self, data):
 
@@ -115,7 +115,13 @@ class KMeans():
     return min_distance
 
 
-"""
+def cost(self, x, y):
+
+    
+
+    return 
+
+
 clf = KMeans(k = 6)
 clf.fit(normalized_df)
 
@@ -131,7 +137,7 @@ for classification in clf.clasified_data:
         plt.scatter(featureset[0], featureset[1], color=color, s=80, linewidths=2)
 
 plt.show()
-"""
+
 
 
 
