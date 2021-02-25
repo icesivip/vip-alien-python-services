@@ -11,18 +11,23 @@ style.use('ggplot')
 
 data1 = pd.read_csv('Analytics/clustering/kmeans/datasets/buddymove_holidayiq.csv', header = None)
 #plt.scatter(data1[0].values, data1[1].values)
-#print(data1.tail())
+'''print(data1.tail())'''
 normalized_df = ((data1-data1.mean())/data1.std()).to_numpy()
-
+'''
 print('Uno\n')
 print(normalized_df)
-
+'''
 #Normalizacion de datos, para que se conserve el tipo de dato
 df_scaled = StandardScaler()
 df_scaled = pd.DataFrame(df_scaled.fit_transform(data1),columns  = data1.columns )
-print(df_scaled.tail())
-#prueba aparte (borrame)
-#print('dato 1 \n',df_scaled[0][1])
+'''print(df_scaled.tail())'''
+
+
+"""Acontinuecion se realizara el proceso para escoger la cantidad adecuada de clusters"""
+#Se crea un arreglo donde se guardaran la distorcion con la cantidad de clusters
+#En terminos matematicos, se guardara la suma de las distancias al cuadrados de todos los puntos a su centro asignado
+distortions = []
+K = range(1,6)
 class KMeans():
   
   """
@@ -38,8 +43,8 @@ class KMeans():
     self.centroids = {} #Diccionario que almacena los puntos del dataset que serán usados como centroides.
 
     self.clasified_data = {} #Diccionario que almacena las listas de puntos que pertenecen a cada centroide
-  
-
+    self.real_crentroids = {}
+    self.distortion = 0.0
 
   """
     Description: Define los centroides y los modifica según el promedio de los puntos asociados a ellos.
@@ -47,40 +52,41 @@ class KMeans():
     pre: k debe estar definido; data debe
     post: Se definen los clusters luego de max_iter iteraciones 
   """
-
+  
+        
   def pca_process(self, data):
 
 
     #Calculo de la matrix de convarinza
     cov_mat = np.cov(data.T)
-    #print('NumPy covariance matrix: \n%s' %cov_mat)
+    '''print('NumPy covariance matrix: \n%s' %cov_mat)'''
 
     #Calculo de los eigenvector y eigenvalues
     eigen_vals, eigen_vecs = np.linalg.eig(cov_mat)
-
-    #print('Eigenvectors \n%s' %eigen_vecs)
-    #print('Eigenvalues \n%s' %eigen_vals)
-
+    '''
+    print('Eigenvectors \n%s' %eigen_vecs)
+    print('Eigenvalues \n%s' %eigen_vals)
+    '''
     #Listar y orden las parejas de Eigenvectors y Eigenvalues
     eigen_pairs =  [ (np.abs(eigen_vals[i]),eigen_vecs[:,i]) for i in range(len(eigen_vals))]
 
     eigen_pairs.sort(key = lambda x: x[0], reverse = True)
-    #print('Eigenvalues en orden descendente')
+    '''print('Eigenvalues en orden descendente')
     for i in eigen_pairs:
           print(i[0])
-
+    '''
     #Con loos eigenvalues ordenados, tenemos cuales son los que mas relevancia tienen en la matrix original
     #Lo que sigue es escoger la cantidad de eigen values de mayor a menor que representara nuestro nuevo set 
     # (es importante que la cantidad sea representativa, por lo cual se debe poner un valor porcentual por el cual se necesita o indicar cuanta informacion se saca con la cantidad escogida)
 
     #continuamos generando la matrix de proyeccion a partir de los eigenvalues escogidos
     matrix_proyeccion = np.hstack((eigen_pairs[0][1].reshape(6,1),eigen_pairs[1][1].reshape(6,1)))
-    #print('Matriz de Proyeccion:\n',matrix_proyeccion)
+    '''print('Matriz de Proyeccion:\n',matrix_proyeccion)'''
     
     #por ultimo sacamos los nuevos componentes de los datos
     Y = data.dot(matrix_proyeccion)
     #mostramos
-    print('PCA resutltado \n', Y.to_numpy())
+    '''print('PCA resutltado \n', Y.to_numpy())'''
 
     Y = Y.to_numpy()
     return Y
@@ -91,19 +97,19 @@ class KMeans():
     self.data = data
 
 
-    print('\n\n\n')
+    '''print('\n\n\n')'''
     #Se definen como centroides los primeros k elementos del dataset
     for centroid in range(self.k):
-      print('centroide: ', data[centroid])
+      '''print('centroide: ', data[centroid])'''
       self.centroids[centroid] = data[centroid] 
-    print('\n\n\n')
+    '''print('\n\n\n')'''
     
     """
     for centroid in range(self.k):
       self.centroids[centroid] = random.choice(data)
     """
   def step(self, data):
-
+    self.distortion = 0.0
     self.clasified_data = {}
 
       #Se inicializa una lista vacía para cada cluster en el diccionario de datos clasificados
@@ -114,22 +120,29 @@ class KMeans():
     for data_point in data:
         
       min_distance = self.min_distance(data, data_point) 
-      self.clasified_data[min_distance[1]].append(data_point) # Agrega el datapoint al diccionario que clasifica los datos en los diferentes clusters
-        
+      self.clasified_data[min_distance[1]].append(data_point)# Agrega el datapoint al diccionario que clasifica los datos en los diferentes clusters
+      
+      #se suma el valor del cluster agregado elvandolo al cuadrado
+      self.distortion = self.distortion + np.square(min_distance[0])
+
+
     #Se guarda una copia de los centroides anteriores
     prev_centroids = dict(self.centroids)
-
-    print(self.centroids)
-
+    self.real_crentroids = dict(self.centroids)
+    '''print(self.centroids)'''
+    
+    #se guarda la suma en el arreglo
+    
 
 
     #Se redefinen los clusters con el promedio de los puntos que pertenecen a cada agrupación
     for key in self.clasified_data:
-        
-      #print(type(key), key)
+      '''  
+      print(type(key), key)
       print('count: ', self.clasified_data[key])
+      '''
       self.centroids[key] = np.average(self.clasified_data[key], axis = 0)
-    print(self.centroids)
+    '''print(self.centroids)'''
 
     #Partimos del supuesto que los clusters son óptimos
     optimized = True
@@ -141,9 +154,9 @@ class KMeans():
       original_centroid = prev_centroids[c]
       current_centroid = self.centroids[c]
       if np.sum((current_centroid - original_centroid)/original_centroid*100.0) > 0.001:
-        #print(np.sum((current_centroid-original_centroid)/original_centroid*100.0))
+        '''print(np.sum((current_centroid-original_centroid)/original_centroid*100.0))'''
         optimized = False
-      
+    
     return optimized
 
   """
@@ -159,13 +172,13 @@ class KMeans():
 
   def min_distance(self, data, datapoint):
 
-    min_distance = [0,0]
+    min_distance = [-1,0]
 
     for i in range(self.k):
             
         distance = self.euclidean_distance(self.centroids[i], datapoint)
 
-        if min_distance[0] == 0:
+        if min_distance[0] == -1:
             min_distance[0] = distance
             min_distance[1] = i
         else:
@@ -184,24 +197,33 @@ class KMeans():
     return 
 
 
+for k in  K:
+  clf = KMeans(k = k)
+  df_compress = clf.pca_process(df_scaled)
+  clf.fit(df_compress)
+  for i in range(50):
+    clf.step(clf.data)
+  distortions.append(clf.distortion)
+print(len(distortions))
+plt.figure(figsize=(16,8))
+plt.plot(K, distortions, 'bx-')
+plt.xlabel('k')
+plt.ylabel('Distortion')
+plt.title('The Elbow Method showing the optimal k')
+plt.show()
 
-clf = KMeans(k = 7)
-df_compress = clf.pca_process(df_scaled)
-clf.fit(df_compress)
-clf.step(clf.data)
 
-
-colors = 10*["g","r","c","b","k"]
+colors = 10*["g","r","c","b","k","y","m"]
 
 for classification in clf.clasified_data:
     color = colors[classification]
     for featureset in clf.clasified_data[classification]:
         plt.scatter(featureset[0], featureset[1], color=color, s=80, linewidths=2)
 
-print(clf.centroids)
-for centroid in clf.centroids:
+#print(clf.centroids)
+for centroid in clf.real_crentroids:
 
-  plt.scatter(clf.centroids[centroid][0], clf.centroids[centroid][1],
+  plt.scatter(clf.real_crentroids[centroid][0], clf.real_crentroids[centroid][1],
     marker="x", color="k", s=150, linewidths=5)
                 
 plt.show()
