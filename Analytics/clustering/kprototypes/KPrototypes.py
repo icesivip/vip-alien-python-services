@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from matplotlib import style
 style.use('ggplot')
 import numpy as np
-from Analytics.clustering.kmeans.KMeans import KMeans
+from Analytics.clustering.kmeans import KMeans
 
 
 data1 = pd.read_csv('Analytics/clustering/kprototypes/datasets/super.csv', sep=',')  
