@@ -7,12 +7,13 @@ from matplotlib import style
 from Analytics.PCA import pca
 from Analytics.clustering.kmeans import KMeans
 
+from Analytics.clustering.Pruebas.datasets.routes import buddy
 
 
 style.use('ggplot')
 #\Analytics\PCA\Pca.py
 
-data1 = pd.read_csv('Analytics/clustering/Pruebas/datasets/buddymove_holidayiq.csv', header = None)
+data1 = pd.read_csv(buddy, header = None)
 #plt.scatter(data1[0].values, data1[1].values)
 '''print(data1.tail())'''
 normalized_df = ((data1-data1.mean())/data1.std()).to_numpy()

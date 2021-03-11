@@ -1,11 +1,4 @@
-import pandas as pd
-
 import numpy as np
-
-
-
-
-from Analytics.PCA.pca import pca
 
 class KMeans():
   
