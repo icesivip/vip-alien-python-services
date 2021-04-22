@@ -4,10 +4,7 @@ from matplotlib import style
 
 from Analytics.clustering.kprototypes.KPrototypes import KPrototypes
 
-
 style.use('ggplot')
-import numpy as np
-from Analytics.clustering.kmeans import KMeans
 
 from Analytics.clustering.Pruebas.datasets.routes import super
 
