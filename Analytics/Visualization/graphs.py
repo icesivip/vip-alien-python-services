@@ -1,12 +1,25 @@
-import plotly.express as px
+import plotly
+import plotly.graph_objs as go
 
-class graphs():
+import pandas as pd
+import numpy as np
+import json
 
-    def __init__(self):
-        self.fig = None
 
-    def plot(self, x, y, centroid):
-        self.fig = px.scatter(x, y, color=centroid)
+def plot(df, centroid):
 
-    def show(self):
+
+    data = [
+        go.Scatter(
+            x=df['x'],  # assign x as the dataframe column 'x'
+            y=df['y']
+        )
+]
+
+    graph_json = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
+
+    return graph_json
+    '''
+    def show():
         self.fig.show()
+    '''

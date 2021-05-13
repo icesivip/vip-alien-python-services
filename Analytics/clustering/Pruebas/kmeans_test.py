@@ -59,7 +59,7 @@ km.fit(dat)
 for i in range(200):
     km.step(km.data)
 
-"""
+
 for classification in km.clasified_data:
     color = colors[classification]
     for featureset in km.clasified_data[classification]:
@@ -71,10 +71,11 @@ for centroid in km.real_crentroids:
                 marker="x", color="k", s=150, linewidths=5)
 
 plt.show()
-"""
 
+"""""
 for classification in km.clasified_data:
     for featureset in km.clasified_data[classification]:
         graphs.plot(featureset[0], featureset[1], classification)
 
 graphs.show()
+"""

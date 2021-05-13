@@ -68,6 +68,14 @@
         "documentation": {}
     },
     {
+        "label": "StandardScaler",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
         "label": "style",
         "importPath": "matplotlib",
         "description": "matplotlib",
@@ -92,6 +100,30 @@
         "documentation": {}
     },
     {
+        "label": "pca",
+        "importPath": "Analytics.PCA",
+        "description": "Analytics.PCA",
+        "isExtraImport": true,
+        "detail": "Analytics.PCA",
+        "documentation": {}
+    },
+    {
+        "label": "graphs",
+        "importPath": "Analytics.Visualization",
+        "description": "Analytics.Visualization",
+        "isExtraImport": true,
+        "detail": "Analytics.Visualization",
+        "documentation": {}
+    },
+    {
+        "label": "graphs",
+        "importPath": "Analytics.Visualization",
+        "description": "Analytics.Visualization",
+        "isExtraImport": true,
+        "detail": "Analytics.Visualization",
+        "documentation": {}
+    },
+    {
         "label": "buddy",
         "importPath": "Analytics.clustering.Pruebas.datasets.routes",
         "description": "Analytics.clustering.Pruebas.datasets.routes",
@@ -113,6 +145,15 @@
         "description": "Analytics.clustering.kprototypes.KPrototypes",
         "isExtraImport": true,
         "detail": "Analytics.clustering.kprototypes.KPrototypes",
+        "documentation": {}
+    },
+    {
+        "label": "plotly.express",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "plotly.express",
+        "description": "plotly.express",
+        "detail": "plotly.express",
         "documentation": {}
     },
     {
@@ -252,7 +293,7 @@
         "kind": 5,
         "importPath": "Analytics.clustering.Pruebas.kmeans_test",
         "description": "Analytics.clustering.Pruebas.kmeans_test",
-        "peekOfCode": "colors = 10 * [\"g\", \"r\", \"c\", \"b\", \"k\", \"y\", \"m\"]\nkm = KMeans(k=3)\ncomp = pca(2)\ndat = comp.fit(df_scaled)\nkm.fit(dat)\nfor i in range(200):\n    km.step(km.data)\nfor classification in km.clasified_data:\n    color = colors[classification]\n    for featureset in km.clasified_data[classification]:",
+        "peekOfCode": "colors = 10 * [\"g\", \"r\", \"c\", \"b\", \"k\", \"y\", \"m\"]\nkm = KMeans(k=3)\ncomp = pca(2)\ndat = comp.fit(df_scaled)\nkm.fit(dat)\nfor i in range(200):\n    km.step(km.data)\n\"\"\"\nfor classification in km.clasified_data:\n    color = colors[classification]",
         "detail": "Analytics.clustering.Pruebas.kmeans_test",
         "documentation": {}
     },
@@ -261,7 +302,7 @@
         "kind": 5,
         "importPath": "Analytics.clustering.Pruebas.kmeans_test",
         "description": "Analytics.clustering.Pruebas.kmeans_test",
-        "peekOfCode": "km = KMeans(k=3)\ncomp = pca(2)\ndat = comp.fit(df_scaled)\nkm.fit(dat)\nfor i in range(200):\n    km.step(km.data)\nfor classification in km.clasified_data:\n    color = colors[classification]\n    for featureset in km.clasified_data[classification]:\n        plt.scatter(featureset[0], featureset[1], color=color, s=80, linewidths=2)",
+        "peekOfCode": "km = KMeans(k=3)\ncomp = pca(2)\ndat = comp.fit(df_scaled)\nkm.fit(dat)\nfor i in range(200):\n    km.step(km.data)\n\"\"\"\nfor classification in km.clasified_data:\n    color = colors[classification]\n    for featureset in km.clasified_data[classification]:",
         "detail": "Analytics.clustering.Pruebas.kmeans_test",
         "documentation": {}
     },
@@ -270,7 +311,7 @@
         "kind": 5,
         "importPath": "Analytics.clustering.Pruebas.kmeans_test",
         "description": "Analytics.clustering.Pruebas.kmeans_test",
-        "peekOfCode": "comp = pca(2)\ndat = comp.fit(df_scaled)\nkm.fit(dat)\nfor i in range(200):\n    km.step(km.data)\nfor classification in km.clasified_data:\n    color = colors[classification]\n    for featureset in km.clasified_data[classification]:\n        plt.scatter(featureset[0], featureset[1], color=color, s=80, linewidths=2)\n# print(clf.centroids)",
+        "peekOfCode": "comp = pca(2)\ndat = comp.fit(df_scaled)\nkm.fit(dat)\nfor i in range(200):\n    km.step(km.data)\n\"\"\"\nfor classification in km.clasified_data:\n    color = colors[classification]\n    for featureset in km.clasified_data[classification]:\n        plt.scatter(featureset[0], featureset[1], color=color, s=80, linewidths=2)",
         "detail": "Analytics.clustering.Pruebas.kmeans_test",
         "documentation": {}
     },
@@ -279,7 +320,7 @@
         "kind": 5,
         "importPath": "Analytics.clustering.Pruebas.kmeans_test",
         "description": "Analytics.clustering.Pruebas.kmeans_test",
-        "peekOfCode": "dat = comp.fit(df_scaled)\nkm.fit(dat)\nfor i in range(200):\n    km.step(km.data)\nfor classification in km.clasified_data:\n    color = colors[classification]\n    for featureset in km.clasified_data[classification]:\n        plt.scatter(featureset[0], featureset[1], color=color, s=80, linewidths=2)\n# print(clf.centroids)\nfor centroid in km.real_crentroids:",
+        "peekOfCode": "dat = comp.fit(df_scaled)\nkm.fit(dat)\nfor i in range(200):\n    km.step(km.data)\n\"\"\"\nfor classification in km.clasified_data:\n    color = colors[classification]\n    for featureset in km.clasified_data[classification]:\n        plt.scatter(featureset[0], featureset[1], color=color, s=80, linewidths=2)\n# print(clf.centroids)",
         "detail": "Analytics.clustering.Pruebas.kmeans_test",
         "documentation": {}
     },
@@ -338,11 +379,38 @@
         "documentation": {}
     },
     {
+        "label": "format_data",
+        "kind": 2,
+        "importPath": "Analytics.Visualization.format",
+        "description": "Analytics.Visualization.format",
+        "peekOfCode": "def format_data(data):\n    df_scaled = StandardScaler()\n    df_scaled = pd.DataFrame(df_scaled.fit_transform(data), columns=data.columns)\n    p = pca(2)\n    formatted_data = p.fit(df_scaled)\n    return formatted_data",
+        "detail": "Analytics.Visualization.format",
+        "documentation": {}
+    },
+    {
+        "label": "graphs",
+        "kind": 6,
+        "importPath": "Analytics.Visualization.graphs",
+        "description": "Analytics.Visualization.graphs",
+        "peekOfCode": "class graphs():\n    def __init__(self):\n        self.fig = None\n    def plot(self, x, y, centroid):\n        self.fig = px.scatter(x, y, color=centroid)\n    def show(self):\n        self.fig.show()",
+        "detail": "Analytics.Visualization.graphs",
+        "documentation": {}
+    },
+    {
+        "label": "fit_kmeans",
+        "kind": 2,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "def fit_kmeans():",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
         "label": "app",
         "kind": 5,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "app = Flask(__name__)\napp.add_url_rule('/', view_func=forecasts.HelloWorld)\n\"\"\"\napp.add_url_rule('/', view_func=KMeans.)\napp.add_url_rule('/', view_func=KPrototypes.)\n\"\"\"",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/fit-km', metho)\ndef fit_kmeans():",
         "detail": "run",
         "documentation": {}
     }
