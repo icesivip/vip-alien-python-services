@@ -5,8 +5,10 @@ from Analytics.clustering.Pruebas.datasets.routes import folder
 from Analytics.clustering.model import controller
 
 import os
-from flask import Flask, flash, request, redirect, url_for
+from flask import Flask, flash, request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
+
+
 
 ALLOWED_EXTENSIONS = {'txt', 'csv'}
 
@@ -14,6 +16,10 @@ app = Flask(__name__)
 
 app.config['UPLOAD_FOLDER'] = folder
 
+
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 @app.route('/fit-km')
 def fit_kmeans():
@@ -25,7 +31,12 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/testt', methods=['GET', 'POST'])
+def test():
+    return "a"
+
+
+@app.route('/upl', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         # check if the post request has the file part
@@ -42,8 +53,7 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
-            json = graphs.plot(controller.fit_data(filename))
+            json = graphs.plot(controller.fit_data('/'+filename))
 
-            return redirect(url_for('uploaded_file',
-                                    filename=filename))
+            return render_template('index.html' , graphJSON=json)
     return

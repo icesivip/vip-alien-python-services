@@ -6,7 +6,7 @@ import numpy as np
 import json
 
 
-def plot(df, centroid):
+def plot(df):
 
 
     data = [
@@ -14,7 +14,7 @@ def plot(df, centroid):
             x=df['x'],  # assign x as the dataframe column 'x'
             y=df['y']
         )
-]
+    ]
 
     graph_json = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hallo</title>
+</head>
+<body>
+    <div>
+        <card>
+            <h2>Select your file</h2>
+            <div class="container">
+                <div class="large-12 medium-12 small-12 cell">
+                    <label>File
+                    <input type="file" id="file" ref="file" onchange="handleFileUpload()"/>
+                    </label>
+                    <button onclick="submitFile()">Submit</button>
+                </div>
+            </div>
+        </card>
+    </div>
+</body>
+
+
+<script>
+
+    var file='';
+
+    function handleFileUpload(){
+        console.log("Cambió de archivo")
+        file.$refs.file.files[0];
+
+    }
+
+
+    function submitFile(){
+
+        console.log("Submit")
+        let formData = new FormData();
+
+            formData.append('file', file);
+
+            axios.post( '/testt',
+                formData,
+                {
+                    headers: {
+                    'Content-Type': 'multipart/form-data'
+                    }
+                }
+            ).then(function(){
+                console.log('SUCCESS!!');
+            })
+            .catch(function(){
+                console.log('FAILURE!!');
+            });
+
+    }
+
+</script>
+
+
+</html>

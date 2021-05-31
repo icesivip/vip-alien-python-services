@@ -25,14 +25,15 @@ def fit_data(filename, k=3):
     for i in range(200):
         km.step(km.data)
 
-    x = np.array()
-    y = np.array()
+    x = np.empty(0)
+    y = np.empty(0)
 
     for classification in km.clasified_data:
 
         for featureset in km.clasified_data[classification]:
-            x.append(featureset[0])
-            y.append(featureset[1])
+
+            x = np.append(x, featureset[0])
+            y = np.append(y, featureset[1])
 
     df = pd.DataFrame({'x': x, 'y': y})
 
