@@ -14,6 +14,8 @@ ALLOWED_EXTENSIONS = {'txt', 'csv'}
 
 app = Flask(__name__)
 
+app.secret_key = 'super secret key'
+
 app.config['UPLOAD_FOLDER'] = folder
 
 
@@ -53,7 +55,7 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
-            json = graphs.plot(controller.fit_data('/'+filename))
+            json = controller.fit_data('/'+filename)
 
-            return render_template('index.html' , graphJSON=json)
-    return
+            return json
+    return 'Oh no'

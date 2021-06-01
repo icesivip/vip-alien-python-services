@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import json
 import matplotlib.pyplot as plt
 
 from sklearn.preprocessing import StandardScaler
@@ -9,6 +10,19 @@ from Analytics.PCA import pca
 from Analytics.clustering.kmeans import KMeans
 from Analytics.Visualization import graphs
 from Analytics.clustering.Pruebas.datasets.routes import folder
+
+
+class NumpyEncoder(json.JSONEncoder):
+    """ Special json encoder for numpy types """
+    def default(self, obj):
+        if isinstance(obj, np.integer):
+            return int(obj)
+        elif isinstance(obj, np.floating):
+            return float(obj)
+        elif isinstance(obj, np.ndarray):
+            return obj.tolist()
+        return json.JSONEncoder.default(self, obj)
+
 
 
 def fit_data(filename, k=3):
@@ -28,13 +42,10 @@ def fit_data(filename, k=3):
     x = np.empty(0)
     y = np.empty(0)
 
-    for classification in km.clasified_data:
+    df = km.clasified_data
 
-        for featureset in km.clasified_data[classification]:
+    dumped = json.dumps(df, cls=NumpyEncoder)
 
-            x = np.append(x, featureset[0])
-            y = np.append(y, featureset[1])
+    return dumped
 
-    df = pd.DataFrame({'x': x, 'y': y})
 
-    return df
