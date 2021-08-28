@@ -58,7 +58,7 @@ def fit_data_kp(filename, k=3):
 
     normalized_df = ((data1 - data1.mean()) / data1.std()).to_numpy()
 
-    clf = KPrototypes(cat=[1], k=3)
+    clf = KPrototypes(cat=[1], k=2)
     clf.fit(normalized_df)
 
     for i in range(50):

@@ -8,9 +8,7 @@ class pca():
 
     def fit(self, data):
 
-        print('AAAAAAAAAAA');
-        print(len(data.columns))
-        print('AAAAAAAAAAA');
+
 
         #Calculo de la matrix de convarinza
         cov_mat = np.cov(data.T)

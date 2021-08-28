@@ -33,12 +33,11 @@
         "documentation": {}
     },
     {
-        "label": "os",
-        "kind": 6,
+        "label": "KMeans",
+        "importPath": "Analytics.clustering.kmeans",
+        "description": "Analytics.clustering.kmeans",
         "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
+        "detail": "Analytics.clustering.kmeans",
         "documentation": {}
     },
     {
@@ -48,6 +47,15 @@
         "importPath": "pandas",
         "description": "pandas",
         "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
         "documentation": {}
     },
     {
@@ -76,6 +84,30 @@
         "documentation": {}
     },
     {
+        "label": "StandardScaler",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "StandardScaler",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "style",
+        "importPath": "matplotlib",
+        "description": "matplotlib",
+        "isExtraImport": true,
+        "detail": "matplotlib",
+        "documentation": {}
+    },
+    {
         "label": "style",
         "importPath": "matplotlib",
         "description": "matplotlib",
@@ -108,6 +140,22 @@
         "documentation": {}
     },
     {
+        "label": "pca",
+        "importPath": "Analytics.PCA",
+        "description": "Analytics.PCA",
+        "isExtraImport": true,
+        "detail": "Analytics.PCA",
+        "documentation": {}
+    },
+    {
+        "label": "pca",
+        "importPath": "Analytics.PCA",
+        "description": "Analytics.PCA",
+        "isExtraImport": true,
+        "detail": "Analytics.PCA",
+        "documentation": {}
+    },
+    {
         "label": "graphs",
         "importPath": "Analytics.Visualization",
         "description": "Analytics.Visualization",
@@ -121,6 +169,22 @@
         "description": "Analytics.Visualization",
         "isExtraImport": true,
         "detail": "Analytics.Visualization",
+        "documentation": {}
+    },
+    {
+        "label": "graphs",
+        "importPath": "Analytics.Visualization",
+        "description": "Analytics.Visualization",
+        "isExtraImport": true,
+        "detail": "Analytics.Visualization",
+        "documentation": {}
+    },
+    {
+        "label": "folder",
+        "importPath": "Analytics.clustering.Pruebas.datasets.routes",
+        "description": "Analytics.clustering.Pruebas.datasets.routes",
+        "isExtraImport": true,
+        "detail": "Analytics.clustering.Pruebas.datasets.routes",
         "documentation": {}
     },
     {
@@ -140,6 +204,14 @@
         "documentation": {}
     },
     {
+        "label": "folder",
+        "importPath": "Analytics.clustering.Pruebas.datasets.routes",
+        "description": "Analytics.clustering.Pruebas.datasets.routes",
+        "isExtraImport": true,
+        "detail": "Analytics.clustering.Pruebas.datasets.routes",
+        "documentation": {}
+    },
+    {
         "label": "KPrototypes",
         "importPath": "Analytics.clustering.kprototypes.KPrototypes",
         "description": "Analytics.clustering.kprototypes.KPrototypes",
@@ -148,20 +220,38 @@
         "documentation": {}
     },
     {
-        "label": "plotly.express",
-        "kind": 6,
+        "label": "KPrototypes",
+        "importPath": "Analytics.clustering.kprototypes.KPrototypes",
+        "description": "Analytics.clustering.kprototypes.KPrototypes",
         "isExtraImport": true,
-        "importPath": "plotly.express",
-        "description": "plotly.express",
-        "detail": "plotly.express",
+        "detail": "Analytics.clustering.kprototypes.KPrototypes",
         "documentation": {}
     },
     {
-        "label": "forecasts",
-        "importPath": "Analytics.Forecasts",
-        "description": "Analytics.Forecasts",
+        "label": "os",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "Analytics.Forecasts",
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "plotly",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "plotly",
+        "description": "plotly",
+        "detail": "plotly",
+        "documentation": {}
+    },
+    {
+        "label": "plotly.graph_objs",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "plotly.graph_objs",
+        "description": "plotly.graph_objs",
+        "detail": "plotly.graph_objs",
         "documentation": {}
     },
     {
@@ -173,11 +263,75 @@
         "documentation": {}
     },
     {
+        "label": "controller",
+        "importPath": "Analytics.clustering.model",
+        "description": "Analytics.clustering.model",
+        "isExtraImport": true,
+        "detail": "Analytics.clustering.model",
+        "documentation": {}
+    },
+    {
         "label": "Flask",
         "importPath": "flask",
         "description": "flask",
         "isExtraImport": true,
         "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "flash",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "url_for",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "secure_filename",
+        "importPath": "werkzeug.utils",
+        "description": "werkzeug.utils",
+        "isExtraImport": true,
+        "detail": "werkzeug.utils",
         "documentation": {}
     },
     {
@@ -194,8 +348,35 @@
         "kind": 6,
         "importPath": "Analytics.clustering.kprototypes.KPrototypes",
         "description": "Analytics.clustering.kprototypes.KPrototypes",
-        "peekOfCode": "class KPrototypes(KMeans):\n  \"\"\"\n    Inicializa un nuevo objeto de tipo KMeans \n    param: k - número de clusters\n    param: max_iter - número máximo de iteraciones\n    pre: k esté definida\n    post: se crea un nuevo objeto de tipo Kmeans\n  \"\"\"\n  def __init__(self, k, cat, plot_var, max_iter=300):\n    self.k = k ",
+        "peekOfCode": "class KPrototypes(KMeans):\n    \"\"\"\n    Inicializa un nuevo objeto de tipo KMeans \n    param: k - número de clusters\n    param: max_iter - número máximo de iteraciones\n    pre: k esté definida\n    post: se crea un nuevo objeto de tipo Kmeans\n  \"\"\"\n    def __init__(self, k, cat, max_iter=300):\n        self.k = k",
         "detail": "Analytics.clustering.kprototypes.KPrototypes",
+        "documentation": {}
+    },
+    {
+        "label": "NumpyEncoder",
+        "kind": 6,
+        "importPath": "Analytics.clustering.model.controller",
+        "description": "Analytics.clustering.model.controller",
+        "peekOfCode": "class NumpyEncoder(json.JSONEncoder):\n    \"\"\" Special json encoder for numpy types \"\"\"\n    def default(self, obj):\n        if isinstance(obj, np.integer):\n            return int(obj)\n        elif isinstance(obj, np.floating):\n            return float(obj)\n        elif isinstance(obj, np.ndarray):\n            return obj.tolist()\n        return json.JSONEncoder.default(self, obj)",
+        "detail": "Analytics.clustering.model.controller",
+        "documentation": {}
+    },
+    {
+        "label": "fit_data",
+        "kind": 2,
+        "importPath": "Analytics.clustering.model.controller",
+        "description": "Analytics.clustering.model.controller",
+        "peekOfCode": "def fit_data(filename, k=3):\n    route = folder + filename\n    data1 = pd.read_csv(route, header=None)\n    df_scaled = StandardScaler()\n    df_scaled = pd.DataFrame(df_scaled.fit_transform(data1), columns=data1.columns)\n    km = KMeans(k=k)\n    comp = pca(2)\n    dat = comp.fit(df_scaled)\n    km.fit(dat)\n    for i in range(200):",
+        "detail": "Analytics.clustering.model.controller",
+        "documentation": {}
+    },
+    {
+        "label": "fit_data_kp",
+        "kind": 2,
+        "importPath": "Analytics.clustering.model.controller",
+        "description": "Analytics.clustering.model.controller",
+        "peekOfCode": "def fit_data_kp(filename, k=3):\n    route = folder + filename\n    data1 = pd.read_csv(route, sep=',')\n    print(data1)\n    normalized_df = ((data1 - data1.mean()) / data1.std()).to_numpy()\n    clf = KPrototypes(cat=[1], k=2)\n    clf.fit(normalized_df)\n    for i in range(50):\n        clf.step(clf.data)\n    df_kp = pd.DataFrame()",
+        "detail": "Analytics.clustering.model.controller",
         "documentation": {}
     },
     {
@@ -203,7 +384,7 @@
         "kind": 5,
         "importPath": "Analytics.clustering.Pruebas.datasets.routes",
         "description": "Analytics.clustering.Pruebas.datasets.routes",
-        "peekOfCode": "folder = os.path.dirname(os.path.abspath(__file__))\nbuddy = os.path.join(folder, 'buddymove_holidayiq.csv')\nsuper = os.path.join(folder,'super.csv')",
+        "peekOfCode": "folder = os.path.dirname(os.path.abspath(__file__))\nbuddy = os.path.join(folder, 'buddymove_holidayiq.csv')\nsuper = os.path.join(folder,'super.csv')\ncstest = os.path.join(folder,'cstest.csv')",
         "detail": "Analytics.clustering.Pruebas.datasets.routes",
         "documentation": {}
     },
@@ -212,7 +393,7 @@
         "kind": 5,
         "importPath": "Analytics.clustering.Pruebas.datasets.routes",
         "description": "Analytics.clustering.Pruebas.datasets.routes",
-        "peekOfCode": "buddy = os.path.join(folder, 'buddymove_holidayiq.csv')\nsuper = os.path.join(folder,'super.csv')",
+        "peekOfCode": "buddy = os.path.join(folder, 'buddymove_holidayiq.csv')\nsuper = os.path.join(folder,'super.csv')\ncstest = os.path.join(folder,'cstest.csv')",
         "detail": "Analytics.clustering.Pruebas.datasets.routes",
         "documentation": {}
     },
@@ -221,7 +402,16 @@
         "kind": 5,
         "importPath": "Analytics.clustering.Pruebas.datasets.routes",
         "description": "Analytics.clustering.Pruebas.datasets.routes",
-        "peekOfCode": "super = os.path.join(folder,'super.csv')",
+        "peekOfCode": "super = os.path.join(folder,'super.csv')\ncstest = os.path.join(folder,'cstest.csv')",
+        "detail": "Analytics.clustering.Pruebas.datasets.routes",
+        "documentation": {}
+    },
+    {
+        "label": "cstest",
+        "kind": 5,
+        "importPath": "Analytics.clustering.Pruebas.datasets.routes",
+        "description": "Analytics.clustering.Pruebas.datasets.routes",
+        "peekOfCode": "cstest = os.path.join(folder,'cstest.csv')",
         "detail": "Analytics.clustering.Pruebas.datasets.routes",
         "documentation": {}
     },
@@ -293,7 +483,7 @@
         "kind": 5,
         "importPath": "Analytics.clustering.Pruebas.kmeans_test",
         "description": "Analytics.clustering.Pruebas.kmeans_test",
-        "peekOfCode": "colors = 10 * [\"g\", \"r\", \"c\", \"b\", \"k\", \"y\", \"m\"]\nkm = KMeans(k=3)\ncomp = pca(2)\ndat = comp.fit(df_scaled)\nkm.fit(dat)\nfor i in range(200):\n    km.step(km.data)\n\"\"\"\nfor classification in km.clasified_data:\n    color = colors[classification]",
+        "peekOfCode": "colors = 10 * [\"g\", \"r\", \"c\", \"b\", \"k\", \"y\", \"m\"]\nkm = KMeans(k=3)\ncomp = pca(2)\ndat = comp.fit(df_scaled)\nkm.fit(dat)\nfor i in range(200):\n    km.step(km.data)\nfor classification in km.clasified_data:\n    color = colors[classification]\n    for featureset in km.clasified_data[classification]:",
         "detail": "Analytics.clustering.Pruebas.kmeans_test",
         "documentation": {}
     },
@@ -302,7 +492,7 @@
         "kind": 5,
         "importPath": "Analytics.clustering.Pruebas.kmeans_test",
         "description": "Analytics.clustering.Pruebas.kmeans_test",
-        "peekOfCode": "km = KMeans(k=3)\ncomp = pca(2)\ndat = comp.fit(df_scaled)\nkm.fit(dat)\nfor i in range(200):\n    km.step(km.data)\n\"\"\"\nfor classification in km.clasified_data:\n    color = colors[classification]\n    for featureset in km.clasified_data[classification]:",
+        "peekOfCode": "km = KMeans(k=3)\ncomp = pca(2)\ndat = comp.fit(df_scaled)\nkm.fit(dat)\nfor i in range(200):\n    km.step(km.data)\nfor classification in km.clasified_data:\n    color = colors[classification]\n    for featureset in km.clasified_data[classification]:\n        plt.scatter(featureset[0], featureset[1], color=color, s=80, linewidths=2)",
         "detail": "Analytics.clustering.Pruebas.kmeans_test",
         "documentation": {}
     },
@@ -311,7 +501,7 @@
         "kind": 5,
         "importPath": "Analytics.clustering.Pruebas.kmeans_test",
         "description": "Analytics.clustering.Pruebas.kmeans_test",
-        "peekOfCode": "comp = pca(2)\ndat = comp.fit(df_scaled)\nkm.fit(dat)\nfor i in range(200):\n    km.step(km.data)\n\"\"\"\nfor classification in km.clasified_data:\n    color = colors[classification]\n    for featureset in km.clasified_data[classification]:\n        plt.scatter(featureset[0], featureset[1], color=color, s=80, linewidths=2)",
+        "peekOfCode": "comp = pca(2)\ndat = comp.fit(df_scaled)\nkm.fit(dat)\nfor i in range(200):\n    km.step(km.data)\nfor classification in km.clasified_data:\n    color = colors[classification]\n    for featureset in km.clasified_data[classification]:\n        plt.scatter(featureset[0], featureset[1], color=color, s=80, linewidths=2)\n# print(clf.centroids)",
         "detail": "Analytics.clustering.Pruebas.kmeans_test",
         "documentation": {}
     },
@@ -320,7 +510,7 @@
         "kind": 5,
         "importPath": "Analytics.clustering.Pruebas.kmeans_test",
         "description": "Analytics.clustering.Pruebas.kmeans_test",
-        "peekOfCode": "dat = comp.fit(df_scaled)\nkm.fit(dat)\nfor i in range(200):\n    km.step(km.data)\n\"\"\"\nfor classification in km.clasified_data:\n    color = colors[classification]\n    for featureset in km.clasified_data[classification]:\n        plt.scatter(featureset[0], featureset[1], color=color, s=80, linewidths=2)\n# print(clf.centroids)",
+        "peekOfCode": "dat = comp.fit(df_scaled)\nkm.fit(dat)\nfor i in range(200):\n    km.step(km.data)\nfor classification in km.clasified_data:\n    color = colors[classification]\n    for featureset in km.clasified_data[classification]:\n        plt.scatter(featureset[0], featureset[1], color=color, s=80, linewidths=2)\n# print(clf.centroids)\nfor centroid in km.real_crentroids:",
         "detail": "Analytics.clustering.Pruebas.kmeans_test",
         "documentation": {}
     },
@@ -329,7 +519,7 @@
         "kind": 5,
         "importPath": "Analytics.clustering.Pruebas.kprototypes_test",
         "description": "Analytics.clustering.Pruebas.kprototypes_test",
-        "peekOfCode": "data1 = pd.read_csv(super, sep=',')\nprint(data1)\nnormalized_df = ((data1-data1.mean())/data1.std()).to_numpy()\nclf = KPrototypes(cat = [0, 1], plot_var= [3,4], k = 6)\nclf.fit(normalized_df)\nfor centroid in clf.centroids:\n    plt.scatter(clf.centroids[centroid][0], clf.centroids[centroid][1],\n                marker=\"x\", color=\"k\", s=150, linewidths=5)\ncolors = 10*[\"g\",\"r\",\"c\",\"b\",\"k\"]\nfor classification in clf.clasified_data:",
+        "peekOfCode": "data1 = pd.read_csv(super, sep=',')\nnormalized_df = ((data1 - data1.mean()) / data1.std()).to_numpy()\nclf = KPrototypes(cat=[1], k=2)\nclf.fit(normalized_df)\nfor i in range(50):\n    clf.step(clf.data)\ndf_kp = pd.DataFrame()\nfor classification in clf.clasified_data:\n    df_temp = pd.DataFrame(clf.clasified_data[classification])\n    df_kp = df_kp.append(df_temp)",
         "detail": "Analytics.clustering.Pruebas.kprototypes_test",
         "documentation": {}
     },
@@ -338,7 +528,7 @@
         "kind": 5,
         "importPath": "Analytics.clustering.Pruebas.kprototypes_test",
         "description": "Analytics.clustering.Pruebas.kprototypes_test",
-        "peekOfCode": "normalized_df = ((data1-data1.mean())/data1.std()).to_numpy()\nclf = KPrototypes(cat = [0, 1], plot_var= [3,4], k = 6)\nclf.fit(normalized_df)\nfor centroid in clf.centroids:\n    plt.scatter(clf.centroids[centroid][0], clf.centroids[centroid][1],\n                marker=\"x\", color=\"k\", s=150, linewidths=5)\ncolors = 10*[\"g\",\"r\",\"c\",\"b\",\"k\"]\nfor classification in clf.clasified_data:\n    color = colors[classification]\n    for featureset in clf.clasified_data[classification]:",
+        "peekOfCode": "normalized_df = ((data1 - data1.mean()) / data1.std()).to_numpy()\nclf = KPrototypes(cat=[1], k=2)\nclf.fit(normalized_df)\nfor i in range(50):\n    clf.step(clf.data)\ndf_kp = pd.DataFrame()\nfor classification in clf.clasified_data:\n    df_temp = pd.DataFrame(clf.clasified_data[classification])\n    df_kp = df_kp.append(df_temp)\nprint(clf.clasified_data)",
         "detail": "Analytics.clustering.Pruebas.kprototypes_test",
         "documentation": {}
     },
@@ -347,7 +537,34 @@
         "kind": 5,
         "importPath": "Analytics.clustering.Pruebas.kprototypes_test",
         "description": "Analytics.clustering.Pruebas.kprototypes_test",
-        "peekOfCode": "clf = KPrototypes(cat = [0, 1], plot_var= [3,4], k = 6)\nclf.fit(normalized_df)\nfor centroid in clf.centroids:\n    plt.scatter(clf.centroids[centroid][0], clf.centroids[centroid][1],\n                marker=\"x\", color=\"k\", s=150, linewidths=5)\ncolors = 10*[\"g\",\"r\",\"c\",\"b\",\"k\"]\nfor classification in clf.clasified_data:\n    color = colors[classification]\n    for featureset in clf.clasified_data[classification]:\n        plt.scatter(featureset[clf.plot_var[0]], featureset[clf.plot_var[1]], color=color, s=80, linewidths=2)",
+        "peekOfCode": "clf = KPrototypes(cat=[1], k=2)\nclf.fit(normalized_df)\nfor i in range(50):\n    clf.step(clf.data)\ndf_kp = pd.DataFrame()\nfor classification in clf.clasified_data:\n    df_temp = pd.DataFrame(clf.clasified_data[classification])\n    df_kp = df_kp.append(df_temp)\nprint(clf.clasified_data)\ncomp = pca(2)",
+        "detail": "Analytics.clustering.Pruebas.kprototypes_test",
+        "documentation": {}
+    },
+    {
+        "label": "df_kp",
+        "kind": 5,
+        "importPath": "Analytics.clustering.Pruebas.kprototypes_test",
+        "description": "Analytics.clustering.Pruebas.kprototypes_test",
+        "peekOfCode": "df_kp = pd.DataFrame()\nfor classification in clf.clasified_data:\n    df_temp = pd.DataFrame(clf.clasified_data[classification])\n    df_kp = df_kp.append(df_temp)\nprint(clf.clasified_data)\ncomp = pca(2)\ndat = comp.fit(df_kp)\nprint(dat)\ncolors = 10 * [\"g\", \"r\", \"c\", \"b\", \"k\"]\n'''",
+        "detail": "Analytics.clustering.Pruebas.kprototypes_test",
+        "documentation": {}
+    },
+    {
+        "label": "comp",
+        "kind": 5,
+        "importPath": "Analytics.clustering.Pruebas.kprototypes_test",
+        "description": "Analytics.clustering.Pruebas.kprototypes_test",
+        "peekOfCode": "comp = pca(2)\ndat = comp.fit(df_kp)\nprint(dat)\ncolors = 10 * [\"g\", \"r\", \"c\", \"b\", \"k\"]\n'''\nfor datapoint in dat:\n    plt.scatter(datapoint[0], datapoint[1], color='g', s=80, linewidths=2)\n'''\ncount = 0\nprint(clf.clasified_data)",
+        "detail": "Analytics.clustering.Pruebas.kprototypes_test",
+        "documentation": {}
+    },
+    {
+        "label": "dat",
+        "kind": 5,
+        "importPath": "Analytics.clustering.Pruebas.kprototypes_test",
+        "description": "Analytics.clustering.Pruebas.kprototypes_test",
+        "peekOfCode": "dat = comp.fit(df_kp)\nprint(dat)\ncolors = 10 * [\"g\", \"r\", \"c\", \"b\", \"k\"]\n'''\nfor datapoint in dat:\n    plt.scatter(datapoint[0], datapoint[1], color='g', s=80, linewidths=2)\n'''\ncount = 0\nprint(clf.clasified_data)\nblist = []",
         "detail": "Analytics.clustering.Pruebas.kprototypes_test",
         "documentation": {}
     },
@@ -356,7 +573,25 @@
         "kind": 5,
         "importPath": "Analytics.clustering.Pruebas.kprototypes_test",
         "description": "Analytics.clustering.Pruebas.kprototypes_test",
-        "peekOfCode": "colors = 10*[\"g\",\"r\",\"c\",\"b\",\"k\"]\nfor classification in clf.clasified_data:\n    color = colors[classification]\n    for featureset in clf.clasified_data[classification]:\n        plt.scatter(featureset[clf.plot_var[0]], featureset[clf.plot_var[1]], color=color, s=80, linewidths=2)\nplt.show()",
+        "peekOfCode": "colors = 10 * [\"g\", \"r\", \"c\", \"b\", \"k\"]\n'''\nfor datapoint in dat:\n    plt.scatter(datapoint[0], datapoint[1], color='g', s=80, linewidths=2)\n'''\ncount = 0\nprint(clf.clasified_data)\nblist = []\nfor classification in clf.clasified_data:\n    color = colors[classification]",
+        "detail": "Analytics.clustering.Pruebas.kprototypes_test",
+        "documentation": {}
+    },
+    {
+        "label": "count",
+        "kind": 5,
+        "importPath": "Analytics.clustering.Pruebas.kprototypes_test",
+        "description": "Analytics.clustering.Pruebas.kprototypes_test",
+        "peekOfCode": "count = 0\nprint(clf.clasified_data)\nblist = []\nfor classification in clf.clasified_data:\n    color = colors[classification]\n    list = []\n    for featureset in clf.clasified_data[classification]:\n        temp_dic = {}\n        temp_dic['x'] = dat[count][0]\n        temp_dic['y'] = dat[count][1]",
+        "detail": "Analytics.clustering.Pruebas.kprototypes_test",
+        "documentation": {}
+    },
+    {
+        "label": "blist",
+        "kind": 5,
+        "importPath": "Analytics.clustering.Pruebas.kprototypes_test",
+        "description": "Analytics.clustering.Pruebas.kprototypes_test",
+        "peekOfCode": "blist = []\nfor classification in clf.clasified_data:\n    color = colors[classification]\n    list = []\n    for featureset in clf.clasified_data[classification]:\n        temp_dic = {}\n        temp_dic['x'] = dat[count][0]\n        temp_dic['y'] = dat[count][1]\n        list.append(temp_dic)\n        plt.scatter(dat[count][0], dat[count][1], color=color, s=80, linewidths=2)",
         "detail": "Analytics.clustering.Pruebas.kprototypes_test",
         "documentation": {}
     },
@@ -388,12 +623,21 @@
         "documentation": {}
     },
     {
-        "label": "graphs",
-        "kind": 6,
+        "label": "plot",
+        "kind": 2,
         "importPath": "Analytics.Visualization.graphs",
         "description": "Analytics.Visualization.graphs",
-        "peekOfCode": "class graphs():\n    def __init__(self):\n        self.fig = None\n    def plot(self, x, y, centroid):\n        self.fig = px.scatter(x, y, color=centroid)\n    def show(self):\n        self.fig.show()",
+        "peekOfCode": "def plot(df):\n    data = [\n        go.Scatter(\n            x=df['x'],  # assign x as the dataframe column 'x'\n            y=df['y']\n        )\n    ]\n    graph_json = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)\n    return graph_json\n    '''",
         "detail": "Analytics.Visualization.graphs",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "def home():\n    return render_template('index.html')\n@app.route('/fit-km')\ndef fit_kmeans():\n    pass\ndef allowed_file(filename):\n    return '.' in filename and \\\n           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\n@app.route('/testt', methods=['GET', 'POST'])\ndef test():",
+        "detail": "run",
         "documentation": {}
     },
     {
@@ -401,7 +645,52 @@
         "kind": 2,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "def fit_kmeans():",
+        "peekOfCode": "def fit_kmeans():\n    pass\ndef allowed_file(filename):\n    return '.' in filename and \\\n           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\n@app.route('/testt', methods=['GET', 'POST'])\ndef test():\n    return \"a\"\n@app.route('/upl', methods=['GET', 'POST'])\ndef upload_file():",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "allowed_file",
+        "kind": 2,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "def allowed_file(filename):\n    return '.' in filename and \\\n           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\n@app.route('/testt', methods=['GET', 'POST'])\ndef test():\n    return \"a\"\n@app.route('/upl', methods=['GET', 'POST'])\ndef upload_file():\n    if request.method == 'POST':\n        # check if the post request has the file part",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "test",
+        "kind": 2,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "def test():\n    return \"a\"\n@app.route('/upl', methods=['GET', 'POST'])\ndef upload_file():\n    if request.method == 'POST':\n        # check if the post request has the file part\n        if 'file' not in request.files:\n            flash('No file part')\n            return redirect(request.url)\n        file = request.files['file']",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "upload_file",
+        "kind": 2,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "def upload_file():\n    if request.method == 'POST':\n        # check if the post request has the file part\n        if 'file' not in request.files:\n            flash('No file part')\n            return redirect(request.url)\n        file = request.files['file']\n        # if user does not select file, browser also\n        # submit an empty part without filename\n        if file.filename == '':",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "upload_file_kp",
+        "kind": 2,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "def upload_file_kp():\n    if request.method == 'POST':\n        # check if the post request has the file part\n        if 'file' not in request.files:\n            flash('No file part')\n            return redirect(request.url)\n        file = request.files['file']\n        # if user does not select file, browser also\n        # submit an empty part without filename\n        if file.filename == '':",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_EXTENSIONS",
+        "kind": 5,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "ALLOWED_EXTENSIONS = {'txt', 'csv'}\napp = Flask(__name__)\napp.secret_key = 'super secret key'\napp.config['UPLOAD_FOLDER'] = folder\n@app.route('/')\ndef home():\n    return render_template('index.html')\n@app.route('/fit-km')\ndef fit_kmeans():\n    pass",
         "detail": "run",
         "documentation": {}
     },
@@ -410,7 +699,25 @@
         "kind": 5,
         "importPath": "run",
         "description": "run",
-        "peekOfCode": "app = Flask(__name__)\n@app.route('/fit-km', metho)\ndef fit_kmeans():",
+        "peekOfCode": "app = Flask(__name__)\napp.secret_key = 'super secret key'\napp.config['UPLOAD_FOLDER'] = folder\n@app.route('/')\ndef home():\n    return render_template('index.html')\n@app.route('/fit-km')\ndef fit_kmeans():\n    pass\ndef allowed_file(filename):",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "app.secret_key",
+        "kind": 5,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "app.secret_key = 'super secret key'\napp.config['UPLOAD_FOLDER'] = folder\n@app.route('/')\ndef home():\n    return render_template('index.html')\n@app.route('/fit-km')\ndef fit_kmeans():\n    pass\ndef allowed_file(filename):\n    return '.' in filename and \\",
+        "detail": "run",
+        "documentation": {}
+    },
+    {
+        "label": "app.config['UPLOAD_FOLDER']",
+        "kind": 5,
+        "importPath": "run",
+        "description": "run",
+        "peekOfCode": "app.config['UPLOAD_FOLDER'] = folder\n@app.route('/')\ndef home():\n    return render_template('index.html')\n@app.route('/fit-km')\ndef fit_kmeans():\n    pass\ndef allowed_file(filename):\n    return '.' in filename and \\\n           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS",
         "detail": "run",
         "documentation": {}
     }
