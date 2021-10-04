@@ -1,4 +1,5 @@
 import numpy as np
+import json
 
 class KMeans():
   
@@ -9,11 +10,10 @@ class KMeans():
     pre: k esté definida
     post: se crea un nuevo objeto de tipo Kmeans
   """
-  def __init__(self, k, max_iter=300, random_state=19):
-    self.k = k 
-    self.max_iter = max_iter
+  def __init__(self, k, random_state=19):
+    self.k = k
     self.centroids = {} #Diccionario que almacena los puntos del dataset que serán usados como centroides.
-
+    self.data = 0
     self.clasified_data = {} #Diccionario que almacena las listas de puntos que pertenecen a cada centroide
     self.real_crentroids = {}
     self.distortion = 0.0
@@ -126,9 +126,11 @@ class KMeans():
 
   def cost(self, x, y):
 
-    return 
+    return
 
 
+  def toJSON(self):
+    return json.dumps(self, default=lambda o: o.__dict__, sort_keys=True, indent=4)
 
 
 
