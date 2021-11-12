@@ -57,6 +57,8 @@ def fit_data(filename, k=3, ite=200, model=0):
 
     steps = {}
 
+    centroids = {}
+
     if model == 0:
 
         km = KMeans(k=k)
@@ -65,6 +67,13 @@ def fit_data(filename, k=3, ite=200, model=0):
         km.fit(dat)
         step_number = [int(ite / i) for i in range(1, 5)]
         step_number.insert(0, 0)
+
+        centroids = km.centroids
+        realCentroids = {}
+        for k in centroids:
+            realCentroids[k] = {"x": centroids[k][0], "y": centroids[k][1]}
+        centroids = realCentroids
+
         for i in range(ite):
             km.step(km.data)
             if i in step_number:
@@ -76,7 +85,7 @@ def fit_data(filename, k=3, ite=200, model=0):
         km.step(km.data)
         print('>>>>>>>>>>>> Entró')
 
-    model_json = json.dumps(steps, cls=NumpyEncoder)
+    model_json = json.dumps({'steps': steps, 'centroids': centroids}, cls=NumpyEncoder)
 
     return model_json
 
