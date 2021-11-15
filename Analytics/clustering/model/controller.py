@@ -47,7 +47,6 @@ class ModelEncoder(json.JSONEncoder):
 def kmeans_decoder(model):
     return namedtuple('X', model.keys())(*model.values())
 
-
 def fit_data(filename, k=3, ite=200, model=0):
     route = folder + filename
     data1 = pd.read_csv(route, header=None)
@@ -56,7 +55,7 @@ def fit_data(filename, k=3, ite=200, model=0):
     df_scaled = pd.DataFrame(df_scaled.fit_transform(data1), columns=data1.columns)
 
     steps = {}
-
+    data_table = {}
     if model == 0:
 
         km = KMeans(k=k)
@@ -70,15 +69,22 @@ def fit_data(filename, k=3, ite=200, model=0):
             if i in step_number:
                 steps[i] = copy(km.clasified_data)
         steps[ite] = km.clasified_data
+        data_table = km.stats_data
     else:
 
         km = KMeans_Wrapper.format_Kmeans(model, df_scaled)
         km.step(km.data)
         print('>>>>>>>>>>>> Entró')
 
-    model_json = json.dumps(steps, cls=NumpyEncoder)
+    
+    data = {
+        "step":steps,
+        "table":data_table
+    }
 
-    return model_json
+    data_json = json.dumps(data,cls=NumpyEncoder)
+
+    return data_json
 
 
 def fit_data_kp(filename, k=3):
