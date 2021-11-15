@@ -56,36 +56,45 @@ def fit_data(filename, k=3, ite=200, model=0):
 
     steps = {}
     data_table = {}
+    centroids = {}
     if model == 0:
 
         km = KMeans(k=k)
         comp = pca(2)
         dat = comp.fit(df_scaled)
         km.fit(dat)
-        step_number = [int(ite / i) for i in range(1, 5)]
-        step_number.insert(0, 0)
+        step_number = [i for i in range(0, ite, int(ite/4))]
+
         for i in range(ite):
             km.step(km.data)
             if i in step_number:
+                # Data
                 steps[i] = copy(km.clasified_data)
+                # Centroids
+                centroids[i] = organize_centroids(copy(km.real_crentroids))
+        # Data
         steps[ite] = km.clasified_data
         data_table = km.stats_data
+        # Centroids
+        centroids[ite] = organize_centroids(km.real_crentroids)
     else:
 
         km = KMeans_Wrapper.format_Kmeans(model, df_scaled)
         km.step(km.data)
         print('>>>>>>>>>>>> Entró')
 
-    
-    data = {
-        "step":steps,
-        "table":data_table
-    }
 
-    data_json = json.dumps(data,cls=NumpyEncoder)
+    model_json = json.dumps({'steps': steps, 'centroids': centroids, "table":data_table}, cls=NumpyEncoder)
 
-    return data_json
+    return model_json
 
+def organize_centroids(centroids):
+    real_centroids = {}
+
+    for k in centroids:
+        real_centroids[k] = {"x": centroids[k][0], "y": centroids[k][1]}
+
+    return real_centroids
 
 def fit_data_kp(filename, k=3):
     route = folder + filename
