@@ -366,7 +366,7 @@
         "kind": 2,
         "importPath": "Analytics.clustering.model.controller",
         "description": "Analytics.clustering.model.controller",
-        "peekOfCode": "def fit_data(filename, k=3):\n    route = folder + filename\n    data1 = pd.read_csv(route, header=None)\n    df_scaled = StandardScaler()\n    df_scaled = pd.DataFrame(df_scaled.fit_transform(data1), columns=data1.columns)\n    km = KMeans(k=k)\n    comp = pca(2)\n    dat = comp.fit(df_scaled)\n    km.fit(dat)\n    for i in range(200):",
+        "peekOfCode": "def fit_data(filename, k=3, ite=200):\n    route = folder + filename\n    data1 = pd.read_csv(route, header=None)\n    df_scaled = StandardScaler()\n    df_scaled = pd.DataFrame(df_scaled.fit_transform(data1), columns=data1.columns)\n    km = KMeans(k=k)\n    comp = pca(2)\n    dat = comp.fit(df_scaled)\n    km.fit(dat)\n    for i in range(ite):",
         "detail": "Analytics.clustering.model.controller",
         "documentation": {}
     },
@@ -375,7 +375,7 @@
         "kind": 2,
         "importPath": "Analytics.clustering.model.controller",
         "description": "Analytics.clustering.model.controller",
-        "peekOfCode": "def fit_data_kp(filename, k=3):\n    route = folder + filename\n    data1 = pd.read_csv(route, sep=',')\n    print(data1)\n    normalized_df = ((data1 - data1.mean()) / data1.std()).to_numpy()\n    clf = KPrototypes(cat=[1], k=2)\n    clf.fit(normalized_df)\n    for i in range(50):\n        clf.step(clf.data)\n    df_kp = pd.DataFrame()",
+        "peekOfCode": "def fit_data_kp(filename, k=3):\n    route = folder + filename\n    data1 = pd.read_csv(route, sep=',')\n    normalized_df = ((data1 - data1.mean()) / data1.std()).to_numpy()\n    clf = KPrototypes(cat=[1], k=2)\n    clf.fit(normalized_df)\n    for i in range(200):\n        clf.step(clf.data)\n    df_kp = pd.DataFrame()\n    for classification in clf.clasified_data:",
         "detail": "Analytics.clustering.model.controller",
         "documentation": {}
     },

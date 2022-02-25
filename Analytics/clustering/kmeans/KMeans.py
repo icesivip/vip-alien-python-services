@@ -1,4 +1,5 @@
 import numpy as np
+import json
 
 class KMeans():
   
@@ -9,12 +10,12 @@ class KMeans():
     pre: k esté definida
     post: se crea un nuevo objeto de tipo Kmeans
   """
-  def __init__(self, k, max_iter=300, random_state=19):
-    self.k = k 
-    self.max_iter = max_iter
+  def __init__(self, k, random_state=19):
+    self.k = k
     self.centroids = {} #Diccionario que almacena los puntos del dataset que serán usados como centroides.
-
+    self.data = 0
     self.clasified_data = {} #Diccionario que almacena las listas de puntos que pertenecen a cada centroide
+    self.stats_data = {} #Diccionario que almacena las estadisticas (cuenta, porcentaje del total, varianza,desviacion estander) que pertenecen a cada centroide
     self.real_crentroids = {}
     self.distortion = 0.0
 
@@ -45,7 +46,7 @@ class KMeans():
   def step(self, data):
     self.distortion = 0.0
     self.clasified_data = {}
-
+    self.stats_data = {}
       #Se inicializa una lista vacía para cada cluster en el diccionario de datos clasificados
     for cluster in range(self.k):
       self.clasified_data[cluster] = []
@@ -78,6 +79,7 @@ class KMeans():
       self.centroids[key] = np.average(self.clasified_data[key], axis = 0)
     '''print(self.centroids)'''
 
+    self.calculate_stats()
     #Partimos del supuesto que los clusters son óptimos
     optimized = True
 
@@ -90,7 +92,8 @@ class KMeans():
       if np.sum((current_centroid - original_centroid)/original_centroid*100.0) > 0.001:
         '''print(np.sum((current_centroid-original_centroid)/original_centroid*100.0))'''
         optimized = False
-    
+
+
     return optimized
 
   """
@@ -103,6 +106,18 @@ class KMeans():
   def euclidean_distance(self, x, y):
     return np.sqrt(np.sum(np.square(x-y)))
 
+  def calculate_stats(self):
+    data = self.clasified_data
+    totalAmmount = self.data.size #cantidad de datos total
+    #print(totalAmmount)
+    for centroid in data:
+      values  = np.array(data[centroid])
+      ammount = values.size
+      #print(values.len())
+      percent = ammount/totalAmmount
+      variance = values.var()
+      desviation = values.std()
+      self.stats_data[centroid] = np.array([ammount, percent, variance, desviation], float)
 
   def min_distance(self, data, datapoint):
 
@@ -120,15 +135,16 @@ class KMeans():
             if min_distance[0] > distance:
               min_distance[0] = distance
               min_distance[1] = i
-
     return min_distance
 
 
   def cost(self, x, y):
 
-    return 
+    return
 
 
+  def toJSON(self):
+    return json.dumps(self, default=lambda o: o.__dict__, sort_keys=True, indent=4)
 
 
 
