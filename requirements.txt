@@ -47,7 +47,7 @@ olefile==0.46
 pygame==1.9.6
 pylint==2.5.3
 pytz==2019.3
-pywin32==227
+pywin32==301
 pywinpty==0.5.7
 pyzmq==20.0.0
 QtPy==1.9.0
