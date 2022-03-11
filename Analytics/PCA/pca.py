@@ -8,6 +8,8 @@ class pca():
 
     def fit(self, data):
 
+
+
         #Calculo de la matrix de convarinza
         cov_mat = np.cov(data.T)
         '''print('NumPy covariance matrix: \n%s' %cov_mat)'''
@@ -31,7 +33,7 @@ class pca():
         # (es importante que la cantidad sea representativa, por lo cual se debe poner un valor porcentual por el cual se necesita o indicar cuanta informacion se saca con la cantidad escogida)
 
         #continuamos generando la matrix de proyeccion a partir de los eigenvalues escogidos
-        matrix_proyeccion = np.hstack((eigen_pairs[0][1].reshape(6,1),eigen_pairs[1][1].reshape(6,1)))
+        matrix_proyeccion = np.hstack((eigen_pairs[0][1].reshape(len(data.columns),1),eigen_pairs[1][1].reshape(len(data.columns),1)))
         '''print('Matriz de Proyeccion:\n',matrix_proyeccion)'''
         
         #por ultimo sacamos los nuevos componentes de los datos
@@ -40,4 +42,5 @@ class pca():
         '''print('PCA resutltado \n', Y.to_numpy())'''
 
         Y = Y.to_numpy()
+
         return Y

@@ -6,7 +6,7 @@ from matplotlib import style
 
 from Analytics.PCA import pca
 from Analytics.clustering.kmeans import KMeans
-
+from Analytics.Visualization import graphs
 from Analytics.clustering.Pruebas.datasets.routes import buddy
 
 
@@ -52,14 +52,30 @@ plt.show()
 
 colors = 10 * ["g", "r", "c", "b", "k", "y", "m"]
 
-for classification in clf.clasified_data:
+km = KMeans(k=3)
+comp = pca(2)
+dat = comp.fit(df_scaled)
+km.fit(dat)
+for i in range(200):
+    km.step(km.data)
+
+
+for classification in km.clasified_data:
     color = colors[classification]
-    for featureset in clf.clasified_data[classification]:
+    for featureset in km.clasified_data[classification]:
         plt.scatter(featureset[0], featureset[1], color=color, s=80, linewidths=2)
 
 # print(clf.centroids)
-for centroid in clf.real_crentroids:
-    plt.scatter(clf.real_crentroids[centroid][0], clf.real_crentroids[centroid][1],
+for centroid in km.real_crentroids:
+    plt.scatter(km.real_crentroids[centroid][0], km.real_crentroids[centroid][1],
                 marker="x", color="k", s=150, linewidths=5)
 
 plt.show()
+
+"""""
+for classification in km.clasified_data:
+    for featureset in km.clasified_data[classification]:
+        graphs.plot(featureset[0], featureset[1], classification)
+
+graphs.show()
+"""
