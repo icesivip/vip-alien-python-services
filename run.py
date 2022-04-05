@@ -113,3 +113,7 @@ def upload_file_kp():
             return jsonify(data)
 
     return 'Oh no'
+
+    
+if(__name__ == '__main__'):
+    app.run(debug=True)
