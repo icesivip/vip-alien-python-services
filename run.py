@@ -6,9 +6,9 @@ from Analytics.clustering.kprototypes import KPrototypes
 from Analytics.clustering.Pruebas.datasets.routes import folder
 from Analytics.clustering.model import controller
 from Analytics.clustering.model import KMeans_Wrapper
-
-import os
+from flask_cors import CORS
 import json
+import os
 from flask import Flask, flash, request, redirect, url_for, render_template, jsonify
 from werkzeug.utils import secure_filename
 
@@ -20,7 +20,7 @@ app.secret_key = 'super secret key'
 
 app.config['UPLOAD_FOLDER'] = folder
 
-
+CORS(app)
 
 @app.route('/')
 def home():
@@ -114,6 +114,6 @@ def upload_file_kp():
 
     return 'Oh no'
 
-    
+
 if(__name__ == '__main__'):
     app.run(debug=True)
